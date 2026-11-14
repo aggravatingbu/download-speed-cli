@@ -1,0 +1,23 @@
+{
+  "name": "download-speed-cli",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Measure download speed using ten sequential HTTP(S) requests.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "start": "node download-speed.js",
+    "check:syntax": "node --check download-speed.js && node --check src/measure.js && node --check test/measure.test.js",
+    "lint": "eslint . --max-warnings 0",
+    "check:types": "tsc --noEmit",
+    "test": "node --test --experimental-test-coverage",
+    "check": "npm run check:syntax && npm run lint && npm run check:types && npm test"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "eslint": "10.15.0",
+    "typescript": "7.0.2"
+  }
+}
